@@ -75,16 +75,25 @@ users can modify any contact and update it's informations
 - conversation_last_message_content (text )
 - conversation_last_maessage_timestamp ( date )
 ## conversations controller ## 
+- get_user_instances
 - create  a conversation action ( contact , instance ):
     search for the conversations that has contact the recieved contact and the instance is the received instance
     if found return the data about the conversations
     if not found create..  new conversation for the last message is the last message between the contact and instance and the timestamp is the timestamp of the last message 
 - list all the conversation action
 - retrieve_conversation_history returns the history   of a given conversation between the contact and the instance ..including identifying the type of the message and reformlating data for the UI
+- conversation_append_tag( conversation , new_tag string ):
+-    the contact IN THE CURRENT CONVERSATION .. if other conversation is selected the contact of the newly selected conversation
+- conversation_remove_tag( conversation , tag_to_remove string):
+-   remove the tag from the tags of  the contact IN THE CURRENT CONVERSATION .. if other conversation is selected the contact of the newly selected conversation
+- retreive_conversation_tags( conversation ): retreive tags of the contact IN THE CURRENT CONVERSATION .. if other conversation is selected the contact of the newly selected conversation
 # conversations views #
+all of these elemnents must implement HOTWIRE or any other ruby on rails  8 feature that will allow real time updates .. Receving messages and updating the UI isntantly whenever a message is sent or recieves or conversations created / deleted , last message of any conversation is updated .. the changes must Appear in The Ui instantly 
+Implement infinite scrolling for the panes 
 the conversations page has two panels use a conversations layout
 the first layout is on the left  and it lists all the conversations once a conversation is clicked ( it shows a right pane for the message history separating the messages that are from me and that are not and show the latest messages first the scrolling must start from the latest messages .. each message has a timestamp 
 the input text and attachement button and send button act as the sending message functionlity the message is routed to the appropriate action based on the type of the message
+The final one is switching the instances in case multiple instances exist .. the only change will happen when switching instances .. you can switch the source of the input message from The default instance to the chosen instance 
 ### messages model ### 
 -message_id ( primary key and it's a random genrated code ) 
 -message_conversation_id ( foreign key of conversations model ) 
@@ -92,7 +101,8 @@ the input text and attachement button and send button act as the sending message
 -message_from_me ( if it's a message sent from the webhook and it's fromMe = false , or if the usr is the one sending the message fromMe then is true ) 
 -message_timestamp ( date default to now ) 
 -message_conent text ( if it's text it's the text of the message if it's a media it's base64 encoding of the media ) 
-##
+## messages controllers ## 
+- index action that retreives history starting from the latest messages 
 ### campaigns model ### 
 -campaign_id ( primary key and it's a random generated code ) 
 -campaign_name text 
