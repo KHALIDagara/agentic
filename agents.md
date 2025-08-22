@@ -108,7 +108,8 @@ The final one is switching the instances in case multiple instances exist .. the
 -message_timestamp ( date default to now ) 
 -message_conent text ( if it's text it's the text of the message if it's a media it's base64 encoding of the media ) 
 ## messages controllers ## 
-- index action that retreives history starting from the latest messages 
+- index action that retreives history starting from the latest messages and takes the conversation as a parameter
+- receive funtion that listens on the instance webhook for incoming messages and saves them to the db 
 ### campaigns model ### 
 -campaign_id ( primary key and it's a random generated code ) 
 -campaign_name text 
