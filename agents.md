@@ -53,6 +53,19 @@ def add_new_entry_to_llm_context( contact , json ):
    appends the existing json with the new json 
 def replace_llm_context ( contact ,json ): 
    replaces the exisitng json with the new json 
+other functions we will need 
+def search_by_name( string ) 
+    returns the contacts 
+def search_by_whatsapp_number( text ) 
+ return the contacts 
+def search_by_country ( text ) 
+ return the contacts 
+# contacts views # 
+compoents must be used : contact component shows contact name , contact whatsapp number , whatsapp  button to start a conversation with the contact 
+index view : shows all the contact and can be filters by the tags in real time and also it shows the count of contacts in a specfic tag in real time and can be filterd by country , name , business description and whatsapp phone number , bulk select option is enabled !! 
+add new contact  view : user can add  new contact and fill all the information
+users can delete contacts
+users can modify any contact and update it's informations
 ### conversations model ###
 - conversation_id ( primary key and it's a random generated code )
 - conversation_instance_id ( foreign key of instance model )
@@ -61,10 +74,16 @@ def replace_llm_context ( contact ,json ):
 - conversation_contact_name (same entity contact_id )
 - conversation_last_message_content (text )
 - conversation_last_maessage_timestamp ( date )
+## conversations controller ## 
+- create  a conversation action ( contact , instance ):
+- list all the conversations action
+- retreive all the messages  of a given conversation
+
 ### messages model ### 
 -message_id ( primary key and it's a random genrated code ) 
 -message_conversation_id ( foreign key of conversations model ) 
 -message_type enum ( can be audio , text , video , document , image ) 
+-message_from_me ( if it's a message sent from the webhook and it's fromMe = false , or if the usr is the one sending the message fromMe then is true ) 
 -message_timestamp ( date default to now ) 
 -message_conent text ( if it's text it's the text of the message if it's a media it's base64 encoding of the media ) 
 ### campaigns model ### 
