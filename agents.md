@@ -30,11 +30,29 @@ pages :
 ### contacts model ###
 - contact_id ( Primary key and it's a random generated code )
 - contact_name (string)
+- contact_whatsapp_number text 
 - contact_description (text)
 - contact_country (text)
+- contact_tags [] 
 - contact_llm_context ( jsonb)
 ## contacts Controller ## 
-
+def index :
+    show all the contacts and get updates in real time 
+def create : 
+     create a new contact the required info are contact_whatsapp_number 
+def assign_tag: 
+    assign a new tag to a contact 
+def search_by_tags(tags [] ):
+    takes the tags as argument and it searches for all the contacts that have the same tags 
+    finally it returns 
+    the list of contacts ids 
+    and the count 
+def delete contact( contact ):
+    destroy the contact 
+def add_new_entry_to_llm_context( contact , json ): 
+   appends the existing json with the new json 
+def replace_llm_context ( contact ,json ): 
+   replaces the exisitng json with the new json 
 ### conversations model ###
 - conversation_id ( primary key and it's a random generated code )
 - conversation_instance_id ( foreign key of instance model )
