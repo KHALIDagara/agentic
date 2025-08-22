@@ -1,4 +1,10 @@
+#Global vars : 
+EVOLUTION_API_KEY = "mude-me"
+EVOLUTION_URL = "https://whatsapp.elaoudi.org"
 ## this file is your ultimate guide to create this project ## 
+The Goal is To Continue Developing the Current Project following the instructions 
+The methology to developing this app is via logging understand .. meaning undersating what is going on just via the Logs .. the Logs must be clear and instructive 
+
 #### available models ####
 
 ### instances model ### 
