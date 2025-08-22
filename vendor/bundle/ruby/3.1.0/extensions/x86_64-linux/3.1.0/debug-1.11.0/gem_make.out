@@ -1,0 +1,16 @@
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20250822-4004029-hyqq2m.rb extconf.rb
+creating Makefile
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250822-4004029-o41q7k/debug

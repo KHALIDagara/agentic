@@ -1,0 +1,10 @@
+{
+  "name": "v1",
+  "scripts": {
+    "build-css": "tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/stylesheets/application.css --watch",
+    "build-css-once": "tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/stylesheets/application.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.12"
+  }
+}

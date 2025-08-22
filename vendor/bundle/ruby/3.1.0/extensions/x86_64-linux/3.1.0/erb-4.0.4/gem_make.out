@@ -1,0 +1,15 @@
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20250822-4004029-s8400g.rb extconf.rb
+creating Makefile
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= clean
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\=
+compiling escape.c
+linking shared-object erb/escape.so
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20250822-4004029-kr8bn6/erb

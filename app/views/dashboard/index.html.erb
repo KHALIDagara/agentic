@@ -1,0 +1,116 @@
+<!-- Discord-like Layout -->
+<div class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <div class="w-16 bg-gray-900 flex flex-col items-center py-3 space-y-3">
+    <!-- Home Icon -->
+    <div class="w-12 h-12 bg-orange rounded-full flex items-center justify-center text-white font-semibold hover:bg-light-orange transition-colors cursor-pointer">
+      H
+    </div>
+    
+    <!-- Separator -->
+    <div class="w-8 h-0.5 bg-gray-600 rounded"></div>
+    
+    <!-- Additional server icons could go here -->
+    <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-gray-300 font-semibold hover:bg-gray-600 transition-colors cursor-pointer">
+      +
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="flex-1 flex flex-col">
+    <!-- Top Navigation Bar -->
+    <div class="h-12 bg-white border-b border-gray-200 flex items-center justify-between px-4 shadow-sm">
+      <div class="flex items-center space-x-4">
+        <h1 class="text-lg font-semibold text-gray-800"># dashboard</h1>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <!-- User Info -->
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white text-sm font-semibold">
+            <%= current_user.email.first.upcase %>
+          </div>
+          <span class="text-gray-700 text-sm font-medium"><%= current_user.email %></span>
+        </div>
+        
+        <!-- Logout Button -->
+        <%= link_to destroy_user_session_path, method: :delete, 
+            class: "bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm font-medium transition-colors",
+            data: { confirm: "Are you sure?" } do %>
+          Logout
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="flex-1 p-6">
+      <!-- Welcome Section -->
+      <div class="bg-gradient-to-r from-orange to-light-orange rounded-lg p-8 text-white mb-6">
+        <h2 class="text-3xl font-bold mb-2">Welcome back, <%= current_user.email.split('@').first.capitalize %>! 👋</h2>
+        <p class="text-orange-100 text-lg">Ready to dive into your dashboard? Everything looks great from here.</p>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold text-gray-800">Analytics</h3>
+              <p class="text-gray-600">View your stats</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold text-gray-800">Team</h3>
+              <p class="text-gray-600">Manage your team</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold text-gray-800">Settings</h3>
+              <p class="text-gray-600">Configure options</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+        <div class="p-6 border-b border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800">Recent Activity</h3>
+        </div>
+        <div class="p-6">
+          <div class="text-center py-8">
+            <svg class="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+            </svg>
+            <p class="text-gray-500">No recent activity to show</p>
+            <p class="text-gray-400 text-sm mt-1">Activities will appear here as you use the application</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

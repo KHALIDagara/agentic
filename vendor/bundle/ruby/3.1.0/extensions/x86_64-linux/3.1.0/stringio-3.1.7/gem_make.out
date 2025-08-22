@@ -1,0 +1,16 @@
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20250822-4001711-ur6x23.rb extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= clean
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/laptop/chatapp5/v1/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20250822-4001711-cx9ok2
