@@ -76,9 +76,15 @@ users can modify any contact and update it's informations
 - conversation_last_maessage_timestamp ( date )
 ## conversations controller ## 
 - create  a conversation action ( contact , instance ):
-- list all the conversations action
-- retreive all the messages  of a given conversation
-
+    search for the conversations that has contact the recieved contact and the instance is the received instance
+    if found return the data about the conversations
+    if not found create..  new conversation for the last message is the last message between the contact and instance and the timestamp is the timestamp of the last message 
+- list all the conversation action
+- retrieve_conversation_history returns the history   of a given conversation between the contact and the instance ..including identifying the type of the message and reformlating data for the UI
+# conversations views #
+the conversations page has two panels use a conversations layout
+the first layout is on the left  and it lists all the conversations once a conversation is clicked ( it shows a right pane for the message history separating the messages that are from me and that are not and show the latest messages first the scrolling must start from the latest messages .. each message has a timestamp 
+the input text and attachement button and send button act as the sending message functionlity the message is routed to the appropriate action based on the type of the message
 ### messages model ### 
 -message_id ( primary key and it's a random genrated code ) 
 -message_conversation_id ( foreign key of conversations model ) 
@@ -86,6 +92,7 @@ users can modify any contact and update it's informations
 -message_from_me ( if it's a message sent from the webhook and it's fromMe = false , or if the usr is the one sending the message fromMe then is true ) 
 -message_timestamp ( date default to now ) 
 -message_conent text ( if it's text it's the text of the message if it's a media it's base64 encoding of the media ) 
+##
 ### campaigns model ### 
 -campaign_id ( primary key and it's a random generated code ) 
 -campaign_name text 
