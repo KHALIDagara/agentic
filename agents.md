@@ -8,6 +8,19 @@
 - instance_status { can be pending(default) , closed , open }
 - instance_qr_code_64 { qr image encoded as string base64 }
 - instance_webhook_url text
+## instances Controller ## 
+def index
+   fetches all the instances data annd the status 
+def create_instance 
+   -use the function in services/evolution.rb to create an instance from the instance whatsapp number and instance name .. the evlution api server will return the base64 qr code log it in the console and save it to instance_qr_code_base_64 .. log the error and the request sent and received 
+   call the setup_Webhook_for_instance function 
+   def setup_webhook_for_instance
+     - create a new webhook for this specific instance that listens for the instance events on BaseUrl(elaoudi.org)/webhooks/instance_id
+     the webhook must always log what it receives in the following format { webhook received !!! instance_id , instance_name , payload data } 
+def update_instance_webhook(url) 
+    updates the the instance webhook using set webhook endpoint of evolution api 
+def delete 
+    deletes the instanace 
 ### contacts model ###
 - contact_id ( Primary key and it's a random generated code )
 - contact_name (string)
