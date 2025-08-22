@@ -21,12 +21,20 @@ def update_instance_webhook(url)
     updates the the instance webhook using set webhook endpoint of evolution api 
 def delete 
     deletes the instanace 
+# instances views # 
+components used : instance component , component description : shows the instance name , instance Phone number , and the status ( green dot if status is open and other color if other status ) . + edit button to edit the webhook url 
+pages : 
+  index page : "shows all the instances components and get updates in real time " condition # updates must be in real time 
+  create page : " form for the user to fill the instance name + instance whatsapp number "
+  show page : show the qr code for the user to scan it once the webhook receives a successful qr code scan update or successful status update to open it redirect the user to the index page 
 ### contacts model ###
 - contact_id ( Primary key and it's a random generated code )
 - contact_name (string)
 - contact_description (text)
 - contact_country (text)
 - contact_llm_context ( jsonb)
+## contacts Controller ## 
+
 ### conversations model ###
 - conversation_id ( primary key and it's a random generated code )
 - conversation_instance_id ( foreign key of instance model )
